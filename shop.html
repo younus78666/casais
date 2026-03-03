@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | CASAÏA — Luxury Moroccan Skincare</title>
+<meta name="description" content="Shop CASAÏA's award-winning prickly pear seed oil. 100% pure, cold-pressed, ethically sourced from Morocco.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF6EE; --cream:#F2EAD8; --gold:#B8960C; --goldl:#D4AA4A;
+  --goldp:#EFE4BE; --dark:#0D0B08; --char:#1C1A17; --brown:#4A3728;
+  --mid:#8A7A6A; --sand:#D6C8B0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--char);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+
+/* ── BOLD NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:24px 72px;display:flex;align-items:center;justify-content:space-between;transition:all .5s;background:rgba(250,246,238,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,170,74,.13)}
+.n-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:12px;color:var(--char);text-decoration:none;transition:color .4s}
+.n-links{display:flex;gap:48px;list-style:none}
+.n-links a{font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--char);text-decoration:none;transition:all .3s;padding:8px 0;position:relative}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.n-links a:hover::after,.n-links a.active::after{width:100%}
+.n-links a:hover{color:var(--gold)}
+.n-cta{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--char);background:var(--goldl);padding:14px 32px;text-decoration:none;transition:all .3s;border-radius:2px}
+.n-cta:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,150,12,.3)}
+.n-cart{position:relative;margin-left:20px;cursor:pointer}
+.n-cart svg{width:24px;height:24px;stroke:var(--char);fill:none;stroke-width:1.5;transition:all .3s}
+.cart-count{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%}
+
+/* ── PAGE HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--char) 0%,#0D0B08 100%);padding:160px 0 80px;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AA4A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:#fff;position:relative;z-index:1}
+.page-title em{font-style:italic;color:var(--goldl)}
+.page-subtitle{font-size:14px;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:3px;text-transform:uppercase;margin-top:16px;position:relative;z-index:1}
+.breadcrumbs{display:flex;justify-content:center;gap:12px;margin-top:24px;position:relative;z-index:1}
+.breadcrumbs a{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}
+.breadcrumbs a:hover{color:var(--goldl)}
+.breadcrumbs span{color:rgba(255,255,255,.4)}
+
+/* ── SHOP SECTION ── */
+.shop-sec{padding:80px 0}
+.shop-wrap{max-width:1400px;margin:0 auto;padding:0 72px}
+.shop-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--sand)}
+.shop-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--char)}
+.shop-count{font-size:13px;color:var(--mid)}
+.shop-filters{display:flex;gap:16px}
+.filter-btn{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--char);background:transparent;border:1px solid var(--sand);padding:10px 20px;cursor:pointer;transition:all .3s}
+.filter-btn:hover,.filter-btn.active{background:var(--char);color:#fff;border-color:var(--char)}
+
+/* ── PRODUCT GRID (Woodmart Style) ── */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:40px}
+.product-card{position:relative;background:#fff;border-radius:0;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);border:1px solid transparent}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.12);border-color:var(--sand)}
+
+.product-image{position:relative;height:400px;background:linear-gradient(135deg,#F8F4EC 0%,#EDE6D6 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.product-image img{width:70%;height:auto;object-fit:contain;transition:transform .6s ease}
+.product-card:hover .product-image img{transform:scale(1.08)}
+
+/* Hover Actions */
+.product-actions{position:absolute;top:16px;right:16px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateX(20px);transition:all .3s ease}
+.product-card:hover .product-actions{opacity:1;transform:translateX(0)}
+.action-btn{width:44px;height:44px;background:#fff;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.1);transition:all .3s}
+.action-btn:hover{background:var(--gold);color:#fff}
+.action-btn svg{width:18px;height:18px}
+
+/* Badge */
+.product-badges{position:absolute;top:16px;left:16px;display:flex;flex-direction:column;gap:8px}
+.badge{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;background:var(--gold);color:#fff}
+.badge.new{background:var(--char)}
+.badge.bestseller{background:#C41E3A}
+
+/* Quick Add (appears on hover at bottom) */
+.quick-add{position:absolute;bottom:0;left:0;right:0;padding:16px;background:var(--char);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.product-card:hover .quick-add{transform:translateY(0)}
+.quick-add-btn{width:100%;padding:14px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#fff;background:transparent;border:1px solid var(--goldl);cursor:pointer;transition:all .3s}
+.quick-add-btn:hover{background:var(--goldl);color:var(--char)}
+
+/* Product Info */
+.product-info{padding:28px 24px 24px}
+.product-category{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--char);margin-bottom:12px;transition:color .3s}
+.product-card:hover .product-name{color:var(--gold)}
+.product-meta{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.product-size{font-size:12px;color:var(--mid);padding:4px 10px;border:1px solid var(--sand)}
+.product-rating{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--gold)}
+.product-price-row{display:flex;align-items:center;gap:12px}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--char)}
+.product-price del{font-size:18px;color:var(--mid);margin-right:8px}
+.product-price ins{text-decoration:none;color:var(--gold)}
+
+/* ── SINGLE PRODUCT SHOWCASE ── */
+.featured-product{background:linear-gradient(135deg,#0D0B08 0%,#1A1308 100%);padding:100px 0;margin-top:80px;position:relative;overflow:hidden}
+.featured-product::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--goldl),transparent)}
+.featured-wrap{max-width:1200px;margin:0 auto;padding:0 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.featured-image{position:relative}
+.featured-image img{width:100%;height:auto;filter:drop-shadow(0 40px 80px rgba(0,0,0,.4))}
+.featured-badge{position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:var(--gold);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.featured-badge span:first-child{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.featured-badge span:last-child{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300}
+.featured-content{color:#fff}
+.featured-label{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--goldl);margin-bottom:16px}
+.featured-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.2;margin-bottom:20px}
+.featured-title em{font-style:italic;color:var(--goldl)}
+.featured-desc{font-size:15px;line-height:1.9;color:rgba(255,255,255,.7);margin-bottom:32px}
+.featured-price{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#fff;margin-bottom:24px}
+.featured-btn{display:inline-flex;align-items:center;gap:12px;background:var(--goldl);color:var(--char);padding:18px 40px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.featured-btn:hover{background:#fff;transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+footer{background:var(--char);padding:72px 0 26px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:52px;border-bottom:1px solid rgba(212,170,74,.1);margin-bottom:30px;max-width:1280px;margin:0 auto 30px;padding-left:72px;padding-right:72px}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;letter-spacing:10px;color:var(--ivory);display:block;margin-bottom:16px;text-decoration:none}
+.ft-tag{font-family:'Cormorant Garamond',serif;font-size:13.5px;font-style:italic;color:rgba(250,246,238,.58);line-height:1.85;margin-bottom:24px}
+.ft-soc{display:flex;gap:12px}
+.ft-soc a{width:36px;height:36px;border:1px solid rgba(212,170,74,.16);display:flex;align-items:center;justify-content:center;color:rgba(250,246,238,.3);text-decoration:none;font-size:11px;font-weight:500;transition:all .3s}
+.ft-soc a:hover{border-color:var(--goldl);color:var(--goldl)}
+.ft-col h4{font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--goldl);margin-bottom:20px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:12px}
+.ft-col a{font-size:13px;font-weight:400;color:rgba(250,246,238,.62);text-decoration:none;transition:color .3s}
+.ft-col a:hover{color:var(--goldl)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:30px 72px 0}
+.ft-copy{font-size:10px;font-weight:400;color:rgba(250,246,238,.48);letter-spacing:1.5px}
+.ft-pay{display:flex;gap:7px}
+.pay-b{font-size:8px;font-weight:600;letter-spacing:2px;color:rgba(250,246,238,.48);border:1px solid rgba(250,246,238,.2);padding:4px 9px}
+
+/* ── REVEAL ANIMATION ── */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+@media(max-width:1024px){
+  nav{padding:20px 40px}
+  .n-links{gap:32px}
+  .shop-wrap,.featured-wrap,.ft-top,.ft-bot{padding-left:40px;padding-right:40px}
+  .featured-wrap{grid-template-columns:1fr;gap:48px}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  body{cursor:auto}
+  nav{padding:16px 24px}
+  .n-links{display:none}
+  .shop-wrap,.featured-wrap,.ft-top,.ft-bot{padding-left:24px;padding-right:24px}
+  .product-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bot{flex-direction:column;gap:16px}
+}
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="n-logo">CASAÏA</a>
+  <ul class="n-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="product.html">Our Story</a></li>
+    <li><a href="product.html#reviews">Reviews</a></li>
+    <li><a href="product.html#faq">FAQ</a></li>
+  </ul>
+  <div style="display:flex;align-items:center">
+    <a href="product.html" class="n-cta">Shop Now</a>
+    <div class="n-cart" onclick="window.location.href='checkout.html'">
+      <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1 class="page-title rv">The <em>Collection</em></h1>
+  <p class="page-subtitle rv d1">Discover Nature's Most Precious Skincare</p>
+  <div class="breadcrumbs rv d2">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <a href="shop.html">Shop</a>
+  </div>
+</section>
+
+<!-- SHOP SECTION -->
+<section class="shop-sec">
+  <div class="shop-wrap">
+    <div class="shop-header rv">
+      <div>
+        <h2 class="shop-title">All Products</h2>
+        <p class="shop-count">Showing 1 product</p>
+      </div>
+      <div class="shop-filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Oils</button>
+        <button class="filter-btn">Sets</button>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card rv d1" onclick="window.location.href='product.html'">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=500&fit=crop" alt="CASAIA Prickly Pear Seed Oil">
+          <div class="product-badges">
+            <span class="badge bestseller">Bestseller</span>
+          </div>
+          <div class="product-actions">
+            <button class="action-btn" title="Quick View" onclick="event.stopPropagation();window.location.href='product.html'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/></svg>
+            </button>
+            <button class="action-btn" title="Add to Wishlist" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="quick-add">
+            <button class="quick-add-btn" onclick="event.stopPropagation();addToCart()">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Facial Oil</p>
+          <h3 class="product-name">Moroccan Prickly Pear Seed Oil</h3>
+          <div class="product-meta">
+            <span class="product-size">30ml</span>
+            <div class="product-rating">★★★★★ <span style="color:var(--mid)">(127)</span></div>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">$89.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT SECTION -->
+<section class="featured-product">
+  <div class="featured-wrap">
+    <div class="featured-image rv">
+      <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=500&h=600&fit=crop" alt="CASAIA Signature Set">
+      <div class="featured-badge rv d2">
+        <span>Limited</span>
+        <span>Set</span>
+      </div>
+    </div>
+    <div class="featured-content rv d1">
+      <p class="featured-label">The Complete Ritual</p>
+      <h2 class="featured-title">Signature <em>Collection</em></h2>
+      <p class="featured-desc">Experience the full benefits of Moroccan prickly pear seed oil with our curated collection. Each set includes our award-winning facial oil, a handcrafted application tool, and an exclusive guide to the Moroccan beauty ritual.</p>
+      <p class="featured-price">$149.00</p>
+      <a href="product.html" class="featured-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+        Shop the Collection
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <a class="ft-logo" href="index.html">CASAÏA</a>
+      <p class="ft-tag">"The world's most precious facial oil.<br>One ingredient. One ritual. One you."<br><br>San Carlos, CA · Sourced from Morocco</p>
+      <div class="ft-soc">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TK</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PI</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="product.html">Prickly Pear Seed Oil</a></li>
+        <li><a href="shop.html">Bundles &amp; Sets</a></li>
+        <li><a href="shop.html">Gift Sets</a></li>
+        <li><a href="shop.html">Subscription</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="product.html">Our Story</a></li>
+        <li><a href="product.html">The Ingredient</a></li>
+        <li><a href="product.html">How to Use</a></li>
+        <li><a href="product.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping Info</a></li>
+        <li><a href="returns.html">Returns Policy</a></li>
+        <li><a href="contact.html">Track Order</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2025 CASAÏA LLC. All rights reserved. · San Carlos, CA, USA</span>
+    <div class="ft-pay">
+      <span class="pay-b">VISA</span><span class="pay-b">MASTERCARD</span><span class="pay-b">AMEX</span><span class="pay-b">PAYPAL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cart functionality
+function addToCart(){
+  const cart = JSON.parse(localStorage.getItem('casaiacart') || '[]');
+  const existing = cart.find(item => item.id === 1);
+  if(existing){
+    existing.qty += 1;
+  } else {
+    cart.push({id:1,name:'Moroccan Prickly Pear Seed Oil',price:89,qty:1,image:'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100&h=100&fit=crop'});
+  }
+  localStorage.setItem('casaiacart',JSON.stringify(cart));
+  updateCartCount();
+  // Show feedback
+  const btn = event.target;
+  const originalText = btn.textContent;
+  btn.textContent = 'Added!';
+  btn.style.background = '#22c55e';
+  setTimeout(()=>{
+    btn.textContent = originalText;
+    btn.style.background = '';
+  },1500);
+}
+
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem('casaiacart') || '[]');
+  const count = cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById('cartCount').textContent = count;
+}
+updateCartCount();
+
+
+// scroll reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moroccan Prickly Pear Seed Oil | CASAÏA</title>
+<meta name="description" content="CASAÏA's signature prickly pear seed oil — 100% pure, cold-pressed, ethically sourced from Morocco. The world's most precious facial oil.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF6EE; --cream:#F2EAD8; --gold:#B8960C; --goldl:#D4AA4A;
+  --goldp:#EFE4BE; --dark:#0D0B08; --char:#1C1A17; --brown:#4A3728;
+  --mid:#8A7A6A; --sand:#D6C8B0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--char);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+
+/* ── BOLD NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:24px 72px;display:flex;align-items:center;justify-content:space-between;transition:all .5s;background:rgba(250,246,238,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,170,74,.13)}
+.n-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:12px;color:var(--char);text-decoration:none;transition:color .4s}
+.n-links{display:flex;gap:48px;list-style:none}
+.n-links a{font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--char);text-decoration:none;transition:all .3s;padding:8px 0;position:relative}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.n-links a:hover::after,.n-links a.active::after{width:100%}
+.n-links a:hover{color:var(--gold)}
+.n-cta{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--char);background:var(--goldl);padding:14px 32px;text-decoration:none;transition:all .3s;border-radius:2px}
+.n-cta:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,150,12,.3)}
+.n-cart{position:relative;margin-left:20px;cursor:pointer}
+.n-cart svg{width:24px;height:24px;stroke:var(--char);fill:none;stroke-width:1.5;transition:all .3s}
+.cart-count{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%}
+
+/* ── BREADCRUMBS ── */
+.breadcrumbs{background:var(--cream);padding:100px 0 20px}
+.breadcrumbs-wrap{max-width:1400px;margin:0 auto;padding:0 72px}
+.breadcrumbs-trail{display:flex;gap:12px;font-size:12px;color:var(--mid)}
+.breadcrumbs-trail a{color:var(--char);text-decoration:none;transition:color .3s}
+.breadcrumbs-trail a:hover{color:var(--gold)}
+.breadcrumbs-trail span{color:var(--sand)}
+
+/* ── PRODUCT HERO ── */
+.product-hero{padding:40px 0 80px;background:var(--cream)}
+.product-wrap{max-width:1400px;margin:0 auto;padding:0 72px;display:grid;grid-template-columns:55% 45%;gap:80px}
+
+/* Gallery */
+.product-gallery{position:sticky;top:120px;height:fit-content}
+.gallery-main{position:relative;background:#fff;padding:60px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:1px solid var(--sand)}
+.gallery-main img{max-height:500px;width:auto;object-fit:contain}
+.gallery-badge{position:absolute;top:20px;left:20px;background:var(--char);color:#fff;padding:10px 18px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.thumb{cursor:pointer;border:2px solid transparent;transition:all .3s;background:#fff;padding:12px;display:flex;align-items:center;justify-content:center}
+.thumb:hover,.thumb.active{border-color:var(--gold)}
+.thumb img{width:100%;height:60px;object-fit:contain}
+
+/* Product Info */
+.product-info{padding-top:20px}
+.product-brand{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.product-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.15;margin-bottom:16px}
+.product-title em{font-style:italic;color:var(--gold)}
+
+.product-rating{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--sand)}
+.stars{color:var(--gold);font-size:14px;letter-spacing:2px}
+.rating-text{font-size:13px;color:var(--mid)}
+.rating-text a{color:var(--char);text-decoration:underline}
+
+.product-price-row{display:flex;align-items:baseline;gap:16px;margin-bottom:24px}
+.current-price{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--char)}
+.original-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--mid);text-decoration:line-through}
+.save-badge{background:#C41E3A;color:#fff;padding:6px 12px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+
+.product-short-desc{font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--sand)}
+
+/* Variations */
+.product-variations{margin-bottom:32px}
+.variation-label{display:flex;justify-content:space-between;margin-bottom:12px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.variation-label span:last-child{color:var(--gold)}
+.variation-options{display:flex;gap:12px}
+.variation-btn{padding:14px 28px;border:1px solid var(--sand);background:transparent;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s}
+.variation-btn:hover,.variation-btn.active{border-color:var(--gold);background:var(--gold);color:#fff}
+
+/* Quantity & Actions */
+.product-actions{margin-bottom:32px}
+.quantity-row{display:flex;gap:16px;margin-bottom:20px}
+.quantity-selector{display:flex;align-items:center;border:1px solid var(--sand);background:#fff}
+.qty-btn{width:48px;height:56px;border:none;background:transparent;font-size:18px;cursor:pointer;transition:all .3s;color:var(--char)}
+.qty-btn:hover{background:var(--cream)}
+.qty-input{width:60px;height:56px;border:none;text-align:center;font-size:16px;font-weight:600;font-family:'Jost',sans-serif}
+
+.add-to-cart-btn{flex:1;height:56px;background:var(--char);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:12px}
+.add-to-cart-btn:hover{background:var(--gold)}
+
+.buy-now-btn{width:100%;height:56px;background:var(--goldl);color:var(--char);border:none;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-bottom:20px}
+.buy-now-btn:hover{background:var(--gold);color:#fff}
+
+.product-meta-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)}
+.meta-item{text-align:center}
+.meta-item svg{width:24px;height:24px;margin-bottom:8px;stroke:var(--gold)}
+.meta-item span{display:block;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid)}
+
+/* ── STICKY ADD TO CART ── */
+.sticky-cart{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:16px 72px;box-shadow:0 -10px 40px rgba(0,0,0,.1);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);z-index:800;display:flex;align-items:center;justify-content:space-between}
+.sticky-cart.show{transform:translateY(0)}
+.sticky-info{display:flex;align-items:center;gap:20px}
+.sticky-info img{width:60px;height:60px;object-fit:cover;border:1px solid var(--sand)}
+.sticky-details h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400}
+.sticky-details p{font-size:13px;color:var(--mid);margin-top:4px}
+.sticky-price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-right:24px}
+.sticky-actions{display:flex;align-items:center;gap:16px}
+.sticky-qty{display:flex;align-items:center;border:1px solid var(--sand)}
+.sticky-qty button{width:40px;height:48px;border:none;background:transparent;cursor:pointer}
+.sticky-qty input{width:50px;height:48px;border:none;text-align:center;font-size:14px;font-weight:600}
+.sticky-add{background:var(--char);color:#fff;border:none;padding:0 32px;height:48px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.sticky-add:hover{background:var(--gold)}
+
+/* ── TABS SECTION ── */
+.tabs-section{background:#fff;padding:80px 0}
+.tabs-wrap{max-width:1200px;margin:0 auto;padding:0 72px}
+.tabs-header{display:flex;gap:48px;border-bottom:2px solid var(--sand);margin-bottom:48px}
+.tab-btn{padding:20px 0;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);background:transparent;border:none;cursor:pointer;position:relative;transition:color .3s}
+.tab-btn::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.tab-btn:hover,.tab-btn.active{color:var(--char)}
+.tab-btn.active::after{width:100%}
+
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* Description Tab */
+.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.desc-content h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-bottom:20px}
+.desc-content h3 em{font-style:italic;color:var(--gold)}
+.desc-content p{font-size:15px;line-height:2;color:var(--mid);margin-bottom:20px}
+.desc-features{list-style:none}
+.desc-features li{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--sand);font-size:14px}
+.desc-features li svg{width:20px;height:20px;stroke:var(--gold);flex-shrink:0;margin-top:2px}
+.desc-image img{width:100%;height:auto}
+
+/* Benefits Grid */
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.benefit-item{text-align:center;padding:40px 24px;border:1px solid var(--sand);transition:all .3s}
+.benefit-item:hover{border-color:var(--gold);transform:translateY(-4px)}
+.benefit-item svg{width:48px;height:48px;margin-bottom:20px;stroke:var(--gold)}
+.benefit-item h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:12px}
+.benefit-item p{font-size:13px;line-height:1.8;color:var(--mid)}
+
+/* FAQ Tab */
+.faq-list{max-width:800px}
+.faq-item{border-bottom:1px solid var(--sand)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:24px 0;cursor:pointer}
+.faq-q h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;transition:color .3s}
+.faq-item:hover .faq-q h4{color:var(--gold)}
+.faq-icon{width:24px;height:24px;position:relative;flex-shrink:0}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;background:var(--char);transition:all .3s}
+.faq-icon::before{width:12px;height:2px;top:11px;left:6px}
+.faq-icon::after{width:2px;height:12px;top:6px;left:11px}
+.faq-item.open .faq-icon::after{transform:rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
+.faq-a p{font-size:14px;line-height:1.9;color:var(--mid)}
+
+/* Reviews Tab */
+.reviews-summary{display:grid;grid-template-columns:300px 1fr;gap:60px;margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid var(--sand)}
+.rating-big{text-align:center;padding:40px;background:var(--cream)}
+.rating-number{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;line-height:1}
+.rating-stars{color:var(--gold);font-size:18px;margin:12px 0}
+.rating-count{font-size:13px;color:var(--mid)}
+.rating-bars{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.rating-bar{display:flex;align-items:center;gap:16px}
+.rating-bar span:first-child{width:60px;font-size:13px;font-weight:500}
+.rating-bar .bar{flex:1;height:8px;background:var(--sand);border-radius:4px;overflow:hidden}
+.rating-bar .bar-fill{height:100%;background:var(--gold);border-radius:4px}
+.rating-bar span:last-child{width:40px;text-align:right;font-size:13px;color:var(--mid)}
+
+.review-item{padding:40px 0;border-bottom:1px solid var(--sand)}
+.review-header{display:flex;justify-content:space-between;margin-bottom:16px}
+.reviewer{display:flex;align-items:center;gap:16px}
+.reviewer-avatar{width:48px;height:48px;border-radius:50%;background:var(--char);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600}
+.reviewer-info h4{font-size:15px;font-weight:600}
+.reviewer-info span{font-size:12px;color:var(--mid)}
+.review-stars{color:var(--gold);font-size:12px}
+.review-content p{font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:16px}
+.review-images{display:flex;gap:12px;margin-top:16px}
+.review-images img{width:80px;height:80px;object-fit:cover;border:1px solid var(--sand)}
+.review-actions{display:flex;gap:24px;margin-top:20px}
+.review-actions button{font-size:12px;font-weight:500;color:var(--mid);background:transparent;border:none;cursor:pointer;transition:color .3s}
+.review-actions button:hover{color:var(--gold)}
+
+/* How to Use Section */
+.how-to-use{background:var(--ivory);padding:100px 0}
+.how-wrap{max-width:1200px;margin:0 auto;padding:0 72px}
+.how-header{text-align:center;margin-bottom:60px}
+.how-header h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300}
+.how-header h2 em{font-style:italic;color:var(--gold)}
+.steps-timeline{position:relative;max-width:800px;margin:0 auto}
+.steps-timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--sand)}
+.step-item{display:flex;align-items:center;margin-bottom:60px;position:relative}
+.step-item:nth-child(even){flex-direction:row-reverse}
+.step-content{width:calc(50% - 60px);padding:32px;background:#fff;border:1px solid var(--sand)}
+.step-number{width:60px;height:60px;background:var(--char);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;position:absolute;left:50%;transform:translateX(-50%);z-index:2;border:4px solid var(--ivory)}
+.step-content h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:12px}
+.step-content p{font-size:14px;line-height:1.8;color:var(--mid)}
+
+/* ── FOOTER ── */
+footer{background:var(--char);padding:72px 0 26px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:52px;border-bottom:1px solid rgba(212,170,74,.1);margin-bottom:30px;max-width:1280px;margin:0 auto 30px;padding-left:72px;padding-right:72px}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;letter-spacing:10px;color:var(--ivory);display:block;margin-bottom:16px;text-decoration:none}
+.ft-tag{font-family:'Cormorant Garamond',serif;font-size:13.5px;font-style:italic;color:rgba(250,246,238,.58);line-height:1.85;margin-bottom:24px}
+.ft-soc{display:flex;gap:12px}
+.ft-soc a{width:36px;height:36px;border:1px solid rgba(212,170,74,.16);display:flex;align-items:center;justify-content:center;color:rgba(250,246,238,.3);text-decoration:none;font-size:11px;font-weight:500;transition:all .3s}
+.ft-soc a:hover{border-color:var(--goldl);color:var(--goldl)}
+.ft-col h4{font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--goldl);margin-bottom:20px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:12px}
+.ft-col a{font-size:13px;font-weight:400;color:rgba(250,246,238,.62);text-decoration:none;transition:color .3s}
+.ft-col a:hover{color:var(--goldl)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:30px 72px 0}
+.ft-copy{font-size:10px;font-weight:400;color:rgba(250,246,238,.48);letter-spacing:1.5px}
+.ft-pay{display:flex;gap:7px}
+.pay-b{font-size:8px;font-weight:600;letter-spacing:2px;color:rgba(250,246,238,.48);border:1px solid rgba(250,246,238,.2);padding:4px 9px}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media(max-width:1024px){
+  nav{padding:20px 40px}
+  .product-wrap,.tabs-wrap,.how-wrap,.breadcrumbs-wrap,.ft-top,.ft-bot{padding-left:40px;padding-right:40px}
+  .product-wrap{grid-template-columns:1fr;gap:48px}
+  .product-gallery{position:relative;top:0}
+  .desc-grid,.reviews-summary{grid-template-columns:1fr}
+  .steps-timeline::before{left:30px}
+  .step-item,.step-item:nth-child(even){flex-direction:column;align-items:flex-start;padding-left:80px}
+  .step-number{left:30px;transform:none}
+  .step-content{width:100%}
+}
+@media(max-width:768px){
+  body{cursor:auto}
+  nav{padding:16px 24px}
+  .n-links{display:none}
+  .sticky-cart{padding:16px 24px}
+  .sticky-info img{display:none}
+  .product-wrap,.tabs-wrap,.how-wrap,.breadcrumbs-wrap,.ft-top,.ft-bot{padding-left:24px;padding-right:24px}
+  .tabs-header{gap:24px;overflow-x:auto}
+  .tab-btn{font-size:11px;white-space:nowrap}
+  .benefits-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="n-logo">CASAÏA</a>
+  <ul class="n-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="product.html" class="active">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div style="display:flex;align-items:center">
+    <a href="#" class="n-cta" onclick="scrollToProduct();return false">Shop Now</a>
+    <div class="n-cart" onclick="window.location.href='checkout.html'">
+      <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMBS -->
+<section class="breadcrumbs">
+  <div class="breadcrumbs-wrap">
+    <div class="breadcrumbs-trail">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="shop.html">Shop</a>
+      <span>/</span>
+      <span>Moroccan Prickly Pear Seed Oil</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT HERO -->
+<section class="product-hero" id="product">
+  <div class="product-wrap">
+    <!-- Gallery -->
+    <div class="product-gallery rv">
+      <div class="gallery-main">
+        <span class="gallery-badge">Bestseller</span>
+        <img id="mainImage" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop" alt="CASAIA Prickly Pear Seed Oil">
+      </div>
+      <div class="gallery-thumbs">
+        <div class="thumb active" onclick="changeImage(this,0)">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop" alt="View 1">
+        </div>
+        <div class="thumb" onclick="changeImage(this,1)">
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&h=200&fit=crop" alt="View 2">
+        </div>
+        <div class="thumb" onclick="changeImage(this,2)">
+          <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=200&h=200&fit=crop" alt="View 3">
+        </div>
+        <div class="thumb" onclick="changeImage(this,3)">
+          <img src="https://images.unsplash.com/photo-1570194065650-d99fb4b38b15?w=200&h=200&fit=crop" alt="View 4">
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info rv d1">
+      <p class="product-brand">CASAÏA Skincare</p>
+      <h1 class="product-title">Moroccan Prickly Pear <em>Seed Oil</em></h1>
+      
+      <div class="product-rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text"><a href="#reviews">127 Reviews</a> · 4.9 Average Rating</span>
+      </div>
+
+      <div class="product-price-row">
+        <span class="current-price" id="productPrice">$89.00</span>
+        <span class="original-price" id="originalPrice" style="display:none">$120.00</span>
+        <span class="save-badge" id="saveBadge" style="display:none">Save 25%</span>
+      </div>
+
+      <p class="product-short-desc">
+        Cold-pressed from 150+ prickly pear seeds per drop. The highest Vitamin E concentration of any botanical oil on earth. 100% pure, unrefined, ethically sourced from Moroccan highland farms.
+      </p>
+
+      <!-- Variations -->
+      <div class="product-variations">
+        <div class="variation-label">
+          <span>Size</span>
+          <span id="sizeGuide">30ml / 1 fl oz</span>
+        </div>
+        <div class="variation-options">
+          <button class="variation-btn active" onclick="selectSize(this,30,89)">30ml</button>
+          <button class="variation-btn" onclick="selectSize(this,50,139)">50ml</button>
+          <button class="variation-btn" onclick="selectSize(this,100,249)">100ml</button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="product-actions">
+        <div class="quantity-row">
+          <div class="quantity-selector">
+            <button class="qty-btn" onclick="updateQty(-1)">−</button>
+            <input type="number" class="qty-input" id="qtyInput" value="1" min="1" max="10" readonly>
+            <button class="qty-btn" onclick="updateQty(1)">+</button>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+            Add to Cart — $<span id="btnPrice">89</span>
+          </button>
+        </div>
+        <button class="buy-now-btn" onclick="buyNow()">⚡ Buy It Now</button>
+
+        <div class="product-meta-row">
+          <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Secure Checkout</span>
+          </div>
+          <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Fast Shipping</span>
+          </div>
+          <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+            <span>30-Day Returns</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY ADD TO CART -->
+<div class="sticky-cart" id="stickyCart">
+  <div class="sticky-info">
+    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100&h=100&fit=crop" alt="Product">
+    <div class="sticky-details">
+      <h4>Prickly Pear Seed Oil</h4>
+      <p id="stickySize">30ml · $89.00</p>
+    </div>
+  </div>
+  <div class="sticky-actions">
+    <span class="sticky-price" id="stickyPrice">$89.00</span>
+    <div class="sticky-qty">
+      <button onclick="updateStickyQty(-1)">−</button>
+      <input type="text" id="stickyQty" value="1" readonly>
+      <button onclick="updateStickyQty(1)">+</button>
+    </div>
+    <button class="sticky-add" onclick="addToCartSticky()">Add to Cart</button>
+  </div>
+</div>
+
+<!-- TABS SECTION -->
+<section class="tabs-section" id="tabs">
+  <div class="tabs-wrap">
+    <div class="tabs-header">
+      <button class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+      <button class="tab-btn" onclick="switchTab(this,'how-to-use')">How to Use</button>
+      <button class="tab-btn" onclick="switchTab(this,'ingredients')">Ingredients</button>
+      <button class="tab-btn" id="faqTab" onclick="switchTab(this,'faq')">FAQ</button>
+      <button class="tab-btn" id="reviewsTab" onclick="switchTab(this,'reviews')">Reviews (127)</button>
+    </div>
+
+    <!-- Description Tab -->
+    <div class="tab-content active" id="tab-desc">
+      <div class="desc-grid">
+        <div class="desc-content">
+          <h3>The World's Most <em>Precious Facial Oil</em></h3>
+          <p>CASAÏA prickly pear seed oil is cold-pressed and unrefined, preserving every molecule of its natural potency. Sourced from the highlands of Morocco, where the prickly pear cactus thrives in the arid climate, each bottle represents over 30 hours of careful labor.</p>
+          <p>It takes over 150 prickly pear seeds to produce a single drop of oil. The seeds are hand-harvested, sun-dried, and cold-pressed using traditional methods passed down through generations of Moroccan artisans.</p>
+          <ul class="desc-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Highest Vitamin E concentration of any plant oil (150% more than argan oil)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Rich in rare betalains — powerful antioxidants unique to cacti</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 60% linoleic acid — restores skin barrier and regulates sebum</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Zero comedogenic rating — safe for all skin types including acne-prone</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Ethically sourced · Vegan · Cruelty-Free · No additives</li>
+          </ul>
+        </div>
+        <div class="desc-image">
+          <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=800&fit=crop" alt="Moroccan prickly pear cactus">
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-item rv">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          <h4>Deep Hydration</h4>
+          <p>Instantly absorbed with no greasy residue. Locks in moisture for 24 hours.</p>
+        </div>
+        <div class="benefit-item rv d1">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <h4>Anti-Ageing</h4>
+          <p>Neutralises free radicals and visibly softens fine lines in 2 weeks.</p>
+        </div>
+        <div class="benefit-item rv d2">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <h4>Dark Circle Repair</h4>
+          <p>Betalains reduce periorbital hyperpigmentation. Visible results in 4 weeks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to Use Tab -->
+    <div class="tab-content" id="tab-how-to-use">
+      <div class="how-to-use" style="padding:0;background:transparent">
+        <div class="how-wrap" style="padding:0">
+          <div class="steps-timeline">
+            <div class="step-item rv">
+              <div class="step-content">
+                <h3>Cleanse & Tone</h3>
+                <p>Start with a clean, slightly damp face. The oil penetrates deeper on hydrated skin. Use your favorite gentle cleanser and toner.</p>
+              </div>
+              <div class="step-number">01</div>
+            </div>
+            <div class="step-item rv d1">
+              <div class="step-content">
+                <h3>Apply 2–3 Drops</h3>
+                <p>Warm between your fingertips. Press gently onto cheeks, under eyes, forehead, and around the mouth — areas that show ageing first.</p>
+              </div>
+              <div class="step-number">02</div>
+            </div>
+            <div class="step-item rv d2">
+              <div class="step-content">
+                <h3>Massage Upwards</h3>
+                <p>Use gentle upward strokes for 60 seconds to boost circulation and maximise absorption. Take this moment to connect with your skin.</p>
+              </div>
+              <div class="step-number">03</div>
+            </div>
+            <div class="step-item rv d3">
+              <div class="step-content">
+                <h3>Follow with SPF or Rest</h3>
+                <p>In the morning, follow with sunscreen. At night, let it work as a treatment oil while you sleep. Wake up to glowing skin.</p>
+              </div>
+              <div class="step-number">04</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ingredients Tab -->
+    <div class="tab-content" id="tab-ingredients">
+      <div style="max-width:800px;margin:0 auto;text-align:center;padding:40px 0">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:24px">One Ingredient. <em style="color:var(--gold)">Infinite Benefits.</em></h3>
+        <p style="font-size:16px;line-height:2;color:var(--mid);margin-bottom:40px">We believe in simplicity and transparency. Our prickly pear seed oil contains absolutely nothing but 100% pure, cold-pressed, unrefined Opuntia Ficus-Indica Seed Oil.</p>
+        <div style="background:var(--cream);padding:40px;border:2px solid var(--gold);display:inline-block">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--char);margin-bottom:16px">"Opuntia Ficus-Indica Seed Oil"</p>
+          <p style="font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)">100% Pure · Cold-Pressed · Unrefined</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px">
+          <div style="text-align:center">
+            <p style="font-size:48px;margin-bottom:8px">🌵</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Hand Harvested</h4>
+            <p style="font-size:13px;color:var(--mid)">Seeds collected by hand from organic Moroccan farms</p>
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:48px;margin-bottom:8px">⚗️</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Cold Pressed</h4>
+            <p style="font-size:13px;color:var(--mid)">First-press extraction preserves all nutrients</p>
+          </div>
+          <div style="text-align:center">
+            <p style="font-size:48px;margin-bottom:8px">✨</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Unrefined</h4>
+            <p style="font-size:13px;color:var(--mid)">Never heated, bleached, or chemically treated</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Tab -->
+    <div class="tab-content" id="tab-faq">
+      <div class="faq-list" id="faq">
+        <div class="faq-item open">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>Is prickly pear seed oil good for oily or acne-prone skin?</h4>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Yes! Prickly pear seed oil has a comedogenic rating of 0 — meaning it will not clog your pores. Its high linoleic acid content (60%) actually helps regulate sebum production and calm breakouts over time. Many customers with oily skin report that their skin becomes more balanced with regular use.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>How is this different from argan oil?</h4>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>While both are luxury Moroccan oils, prickly pear seed oil contains 150% more Vitamin E than argan oil, plus rare betalains that argan oil lacks. This makes it significantly more potent for anti-ageing, dark circle reduction, and skin brightening. It's often called "the new argan oil, but better."</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>When will I see results?</h4>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Most customers notice improved hydration and a natural glow within 3–5 days of first use. Visible reduction in fine lines and dark circles typically appears within 2–4 weeks of consistent daily use. For best results, apply morning and night.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>Can I use it under makeup?</h4>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Absolutely! CASAÏA absorbs in under 60 seconds, leaving a smooth, luminous base that makes foundation apply beautifully. Allow 2 minutes before applying SPF or makeup. Many makeup artists use it as a priming step for a natural glow.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>How long does one bottle last?</h4>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>With twice-daily use (2-3 drops each time), a 30ml bottle typically lasts 2-3 months. The oil is highly concentrated, so a little goes a long way. Store in a cool, dark place and use within 6 months of opening for optimal freshness.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>Is it safe during pregnancy?</h4>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Yes, our prickly pear seed oil is 100% natural and safe to use during pregnancy and breastfeeding. It can help with pregnancy-related skin concerns like dryness and hormonal breakouts. However, we always recommend consulting your healthcare provider.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews Tab -->
+    <div class="tab-content" id="tab-reviews">
+      <div id="reviews">
+        <div class="reviews-summary rv">
+          <div class="rating-big">
+            <p class="rating-number">4.9</p>
+            <p class="rating-stars">★★★★★</p>
+            <p class="rating-count">Based on 127 reviews</p>
+          </div>
+          <div class="rating-bars">
+            <div class="rating-bar"><span>5 stars</span><div class="bar"><div class="bar-fill" style="width:92%"></div></div><span>117</span></div>
+            <div class="rating-bar"><span>4 stars</span><div class="bar"><div class="bar-fill" style="width:6%"></div></div><span>8</span></div>
+            <div class="rating-bar"><span>3 stars</span><div class="bar"><div class="bar-fill" style="width:2%"></div></div><span>2</span></div>
+            <div class="rating-bar"><span>2 stars</span><div class="bar"><div class="bar-fill" style="width:0%"></div></div><span>0</span></div>
+            <div class="rating-bar"><span>1 star</span><div class="bar"><div class="bar-fill" style="width:0%"></div></div><span>0</span></div>
+          </div>
+        </div>
+
+        <div class="reviews-list">
+          <div class="review-item rv">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="reviewer-avatar">SM</div>
+                <div class="reviewer-info">
+                  <h4>Sophia M.</h4>
+                  <span>Verified Buyer · London, UK</span>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-content">
+              <p>I have tried every luxury facial oil — Tatcha, Sunday Riley, La Mer. CASAÏA is genuinely better. My dark circles are visibly lighter after just two weeks, and the glow is unreal. The texture is so lightweight, it absorbs instantly. I'm on my third bottle and will never switch.</p>
+              <div class="review-images">
+                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=100&h=100&fit=crop" alt="Review photo">
+              </div>
+            </div>
+            <div class="review-actions">
+              <button>👍 Helpful (24)</button>
+              <button>💬 Comment</button>
+            </div>
+          </div>
+
+          <div class="review-item rv d1">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="reviewer-avatar">NR</div>
+                <div class="reviewer-info">
+                  <h4>Nadia R.</h4>
+                  <span>Verified Buyer · New York, USA</span>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-content">
+              <p>I have oily, acne-prone skin and was terrified to try a facial oil. This has been a game-changer! It absorbs in seconds, doesn't break me out, and my skin has never looked more balanced. The hormonal breakouts around my chin have significantly reduced. Worth every penny!</p>
+            </div>
+            <div class="review-actions">
+              <button>👍 Helpful (18)</button>
+              <button>💬 Comment</button>
+            </div>
+          </div>
+
+          <div class="review-item rv d2">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="reviewer-avatar">LK</div>
+                <div class="reviewer-info">
+                  <h4>Leila K.</h4>
+                  <span>Verified Buyer · Dubai, UAE</span>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-content">
+              <p>My dermatologist actually noticed the improvement in my skin texture before I even mentioned changing my routine. The packaging alone is worth the price — it feels like opening a luxury gift every time. As someone with Moroccan heritage, I appreciate the authentic sourcing and quality.</p>
+            </div>
+            <div class="review-actions">
+              <button>👍 Helpful (31)</button>
+              <button>💬 Comment</button>
+            </div>
+          </div>
+
+          <div class="review-item rv d3">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="reviewer-avatar">EJ</div>
+                <div class="reviewer-info">
+                  <h4>Emma J.</h4>
+                  <span>Verified Buyer · Sydney, Australia</span>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-content">
+              <p>At 52, I've tried everything for my ageing skin. This oil has given me results that expensive serums couldn't. My fine lines are softer, my skin tone is more even, and I get compliments on my glow constantly. It's become the cornerstone of my skincare routine.</p>
+            </div>
+            <div class="review-actions">
+              <button>👍 Helpful (15)</button>
+              <button>💬 Comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <a class="ft-logo" href="index.html">CASAÏA</a>
+      <p class="ft-tag">"The world's most precious facial oil.<br>One ingredient. One ritual. One you."<br><br>San Carlos, CA · Sourced from Morocco</p>
+      <div class="ft-soc">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TK</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PI</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="product.html">Prickly Pear Seed Oil</a></li>
+        <li><a href="shop.html">Bundles &amp; Sets</a></li>
+        <li><a href="shop.html">Gift Sets</a></li>
+        <li><a href="shop.html">Subscription</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="product.html">Our Story</a></li>
+        <li><a href="product.html">The Ingredient</a></li>
+        <li><a href="product.html#how-to-use">How to Use</a></li>
+        <li><a href="product.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping Info</a></li>
+        <li><a href="returns.html">Returns Policy</a></li>
+        <li><a href="contact.html">Track Order</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2025 CASAÏA LLC. All rights reserved. · San Carlos, CA, USA</span>
+    <div class="ft-pay">
+      <span class="pay-b">VISA</span><span class="pay-b">MASTERCARD</span><span class="pay-b">AMEX</span><span class="pay-b">PAYPAL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Product data
+const productData = {
+  id: 1,
+  name: 'Moroccan Prickly Pear Seed Oil',
+  sizes: {30: 89, 50: 139, 100: 249},
+  currentSize: 30,
+  currentPrice: 89,
+  qty: 1
+};
+
+const images = [
+  'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1617897903246-719242758050?w=600&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1570194065650-d99fb4b38b15?w=600&h=800&fit=crop'
+];
+
+// Gallery
+function changeImage(thumb,index){
+  document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+  thumb.classList.add('active');
+  document.getElementById('mainImage').src = images[index];
+}
+
+// Size selection
+function selectSize(btn,size,price){
+  document.querySelectorAll('.variation-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  productData.currentSize = size;
+  productData.currentPrice = price;
+  document.getElementById('productPrice').textContent = '$'+price+'.00';
+  document.getElementById('btnPrice').textContent = price;
+  document.getElementById('stickyPrice').textContent = '$'+price+'.00';
+  document.getElementById('stickySize').textContent = size+'ml · $'+price+'.00';
+  document.getElementById('sizeGuide').textContent = size+'ml / '+(size/30).toFixed(1)+' fl oz';
+  if(size>30){
+    const original = Math.round(price*1.3);
+    document.getElementById('originalPrice').textContent = '$'+original+'.00';
+    document.getElementById('originalPrice').style.display = 'inline';
+    document.getElementById('saveBadge').style.display = 'inline';
+  } else {
+    document.getElementById('originalPrice').style.display = 'none';
+    document.getElementById('saveBadge').style.display = 'none';
+  }
+}
+
+// Quantity
+function updateQty(change){
+  const input = document.getElementById('qtyInput');
+  let val = parseInt(input.value) + change;
+  if(val<1)val=1;
+  if(val>10)val=10;
+  input.value = val;
+  productData.qty = val;
+  document.getElementById('stickyQty').value = val;
+}
+
+function updateStickyQty(change){
+  const input = document.getElementById('stickyQty');
+  let val = parseInt(input.value) + change;
+  if(val<1)val=1;
+  if(val>10)val=10;
+  input.value = val;
+  document.getElementById('qtyInput').value = val;
+  productData.qty = val;
+}
+
+// Cart
+function addToCart(){
+  const cart = JSON.parse(localStorage.getItem('casaiacart') || '[]');
+  const existing = cart.find(item => item.id === productData.id && item.size === productData.currentSize);
+  if(existing){
+    existing.qty += productData.qty;
+  } else {
+    cart.push({
+      id: productData.id,
+      name: productData.name,
+      size: productData.currentSize,
+      price: productData.currentPrice,
+      qty: productData.qty,
+      image: images[0]
+    });
+  }
+  localStorage.setItem('casaiacart',JSON.stringify(cart));
+  updateCartCount();
+  alert('Added to cart!');
+}
+
+function addToCartSticky(){
+  addToCart();
+}
+
+function buyNow(){
+  addToCart();
+  window.location.href = 'checkout.html';
+}
+
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem('casaiacart') || '[]');
+  const count = cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById('cartCount').textContent = count;
+}
+updateCartCount();
+
+// Tabs
+function switchTab(btn,tabId){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+tabId).classList.add('active');
+}
+
+// FAQ
+function toggleFaq(q){
+  const item = q.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// Sticky cart
+window.addEventListener('scroll',function(){
+  const product = document.getElementById('product');
+  const tabs = document.getElementById('tabs');
+  const sticky = document.getElementById('stickyCart');
+  const scrollY = window.scrollY;
+  const productBottom = product.offsetTop + product.offsetHeight;
+  const tabsBottom = tabs.offsetTop + tabs.offsetHeight;
+  
+  if(scrollY > productBottom && scrollY < tabsBottom - 400){
+    sticky.classList.add('show');
+  } else {
+    sticky.classList.remove('show');
+  }
+});
+
+function scrollToProduct(){
+  document.getElementById('product').scrollIntoView({behavior:'smooth'});
+}
+
+
+// reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+// URL hash for tabs
+if(window.location.hash==='#faq'){
+  document.getElementById('faqTab').click();
+} else if(window.location.hash==='#reviews'){
+  document.getElementById('reviewsTab').click();
+}
+</script>
+</body>
+</html>

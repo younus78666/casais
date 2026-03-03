@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | CASAÏA — Luxury Moroccan Skincare</title>
+<meta name="description" content="Get in touch with CASAÏA. We're here to help with any questions about our prickly pear seed oil products.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF6EE; --cream:#F2EAD8; --gold:#B8960C; --goldl:#D4AA4A;
+  --goldp:#EFE4BE; --dark:#0D0B08; --char:#1C1A17; --brown:#4A3728;
+  --mid:#8A7A6A; --sand:#D6C8B0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--char);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+
+/* ── BOLD NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:24px 72px;display:flex;align-items:center;justify-content:space-between;transition:all .5s;background:rgba(250,246,238,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,170,74,.13)}
+.n-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:12px;color:var(--char);text-decoration:none;transition:color .4s}
+.n-links{display:flex;gap:48px;list-style:none}
+.n-links a{font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--char);text-decoration:none;transition:all .3s;padding:8px 0;position:relative}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.n-links a:hover::after,.n-links a.active::after{width:100%}
+.n-links a:hover{color:var(--gold)}
+.n-cta{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--char);background:var(--goldl);padding:14px 32px;text-decoration:none;transition:all .3s;border-radius:2px}
+.n-cta:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,150,12,.3)}
+.n-cart{position:relative;margin-left:20px;cursor:pointer}
+.n-cart svg{width:24px;height:24px;stroke:var(--char);fill:none;stroke-width:1.5;transition:all .3s}
+.cart-count{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%}
+
+/* ── PAGE HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--char) 0%,#0D0B08 100%);padding:160px 0 80px;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AA4A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:#fff;position:relative;z-index:1}
+.page-title em{font-style:italic;color:var(--goldl)}
+.page-subtitle{font-size:14px;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:3px;text-transform:uppercase;margin-top:16px;position:relative;z-index:1}
+.breadcrumbs{display:flex;justify-content:center;gap:12px;margin-top:24px;position:relative;z-index:1}
+.breadcrumbs a{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}
+.breadcrumbs a:hover{color:var(--goldl)}
+.breadcrumbs span{color:rgba(255,255,255,.4)}
+
+/* ── CONTACT SECTION ── */
+.contact-sec{padding:80px 0}
+.contact-wrap{max-width:1200px;margin:0 auto;padding:0 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+
+/* Contact Info */
+.contact-info h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;margin-bottom:20px}
+.contact-info h2 em{font-style:italic;color:var(--gold)}
+.contact-info>p{font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:40px}
+
+.contact-methods{display:flex;flex-direction:column;gap:32px}
+.contact-method{display:flex;gap:20px}
+.contact-icon{width:56px;height:56px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon svg{width:24px;height:24px;stroke:var(--gold)}
+.contact-method h4{font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.contact-method p{font-size:14px;color:var(--mid);line-height:1.7}
+.contact-method a{color:var(--char);text-decoration:none;border-bottom:1px solid var(--gold);transition:color .3s}
+.contact-method a:hover{color:var(--gold)}
+
+/* Contact Form */
+.contact-form{background:#fff;padding:48px;border:1px solid var(--sand)}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-group{position:relative}
+.form-group.full{grid-column:1/-1}
+.form-group label{display:block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
+.form-group label span{color:#C41E3A}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px;border:1px solid var(--sand);font-family:'Jost',sans-serif;font-size:14px;transition:all .3s;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.form-group textarea{min-height:150px;resize:vertical}
+
+.submit-btn{width:100%;padding:18px;background:var(--char);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:12px}
+.submit-btn:hover{background:var(--gold)}
+
+/* FAQ Section */
+.faq-sec{background:var(--cream);padding:80px 0}
+.faq-wrap{max-width:800px;margin:0 auto;padding:0 72px}
+.faq-header{text-align:center;margin-bottom:48px}
+.faq-header h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300}
+.faq-header h2 em{font-style:italic;color:var(--gold)}
+.faq-list{background:#fff;border:1px solid var(--sand)}
+.faq-item{border-bottom:1px solid var(--sand)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;cursor:pointer;transition:background .3s}
+.faq-q:hover{background:var(--ivory)}
+.faq-q h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400}
+.faq-icon{width:24px;height:24px;position:relative;flex-shrink:0}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;background:var(--char);transition:all .3s}
+.faq-icon::before{width:12px;height:2px;top:11px;left:6px}
+.faq-icon::after{width:2px;height:12px;top:6px;left:11px}
+.faq-item.open .faq-icon::after{transform:rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding:0 32px 24px}
+.faq-a p{font-size:14px;line-height:1.9;color:var(--mid)}
+
+/* ── FOOTER ── */
+footer{background:var(--char);padding:72px 0 26px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:52px;border-bottom:1px solid rgba(212,170,74,.1);margin-bottom:30px;max-width:1280px;margin:0 auto 30px;padding-left:72px;padding-right:72px}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;letter-spacing:10px;color:var(--ivory);display:block;margin-bottom:16px;text-decoration:none}
+.ft-tag{font-family:'Cormorant Garamond',serif;font-size:13.5px;font-style:italic;color:rgba(250,246,238,.58);line-height:1.85;margin-bottom:24px}
+.ft-soc{display:flex;gap:12px}
+.ft-soc a{width:36px;height:36px;border:1px solid rgba(212,170,74,.16);display:flex;align-items:center;justify-content:center;color:rgba(250,246,238,.3);text-decoration:none;font-size:11px;font-weight:500;transition:all .3s}
+.ft-soc a:hover{border-color:var(--goldl);color:var(--goldl)}
+.ft-col h4{font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--goldl);margin-bottom:20px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:12px}
+.ft-col a{font-size:13px;font-weight:400;color:rgba(250,246,238,.62);text-decoration:none;transition:color .3s}
+.ft-col a:hover{color:var(--goldl)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:30px 72px 0}
+.ft-copy{font-size:10px;font-weight:400;color:rgba(250,246,238,.48);letter-spacing:1.5px}
+.ft-pay{display:flex;gap:7px}
+.pay-b{font-size:8px;font-weight:600;letter-spacing:2px;color:rgba(250,246,238,.48);border:1px solid rgba(250,246,238,.2);padding:4px 9px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media(max-width:1024px){
+  nav{padding:20px 40px}
+  .contact-wrap,.faq-wrap,.ft-top,.ft-bot{padding-left:40px;padding-right:40px}
+  .contact-wrap{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  body{cursor:auto}
+  nav{padding:16px 24px}
+  .n-links{display:none}
+  .contact-wrap,.faq-wrap,.ft-top,.ft-bot{padding-left:24px;padding-right:24px}
+  .form-row{grid-template-columns:1fr}
+  .contact-form{padding:32px}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bot{flex-direction:column;gap:16px}
+}
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="n-logo">CASAÏA</a>
+  <ul class="n-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="product.html">Our Story</a></li>
+    <li><a href="product.html#reviews">Reviews</a></li>
+    <li><a href="product.html#faq">FAQ</a></li>
+  </ul>
+  <div style="display:flex;align-items:center">
+    <a href="shop.html" class="n-cta">Shop Now</a>
+    <div class="n-cart" onclick="window.location.href='checkout.html'">
+      <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1 class="page-title rv">Get in <em>Touch</em></h1>
+  <p class="page-subtitle rv d1">We're Here to Help</p>
+  <div class="breadcrumbs rv d2">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Contact Us</span>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="contact-wrap">
+    <div class="contact-info rv">
+      <h2>We'd Love to <em>Hear From You</em></h2>
+      <p>Have a question about our products, your order, or just want to say hello? Our team is here to help. We typically respond within 24 hours during business days.</p>
+      
+      <div class="contact-methods">
+        <div class="contact-method rv d1">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email Us</h4>
+            <p>For general inquiries:<br><a href="mailto:hello@casaiaskin.com">hello@casaiaskin.com</a></p>
+            <p style="margin-top:8px">For order support:<br><a href="mailto:support@casaiaskin.com">support@casaiaskin.com</a></p>
+          </div>
+        </div>
+        
+        <div class="contact-method rv d2">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Our Location</h4>
+            <p>CASAÏA LLC<br>1234 Market Street<br>San Carlos, CA 94070<br>United States</p>
+          </div>
+        </div>
+        
+        <div class="contact-method rv d3">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Business Hours</h4>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM PST<br>Saturday: 10:00 AM - 4:00 PM PST<br>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form rv d1">
+      <h3 class="form-title">Send Us a Message</h3>
+      <form onsubmit="return handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span>*</span></label>
+            <input type="text" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name <span>*</span></label>
+            <input type="text" name="lastName" required>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label>Email Address <span>*</span></label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group full">
+          <label>Subject <span>*</span></label>
+          <select name="subject" required>
+            <option value="">Select a subject</option>
+            <option value="order">Order Inquiry</option>
+            <option value="product">Product Question</option>
+            <option value="shipping">Shipping Question</option>
+            <option value="returns">Returns & Exchanges</option>
+            <option value="wholesale">Wholesale Inquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Message <span>*</span></label>
+          <textarea name="message" placeholder="How can we help you?" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="faq-wrap">
+    <div class="faq-header rv">
+      <h2>Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list rv d1">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>How can I track my order?</h4>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-a">
+          <p>Once your order ships, you'll receive an email with a tracking number. You can also track your order by logging into your account or visiting our <a href="track-order.html" style="color:var(--gold)">Track Order</a> page.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>What is your return policy?</h4>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-a">
+          <p>We offer a 30-day satisfaction guarantee. If you're not completely happy with your purchase, you can return unopened products within 30 days for a full refund. See our <a href="returns.html" style="color:var(--gold)">Returns Policy</a> for details.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>How long does shipping take?</h4>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-a">
+          <p>Standard shipping takes 5-7 business days. Express shipping (2-3 business days) is available at checkout. Free standard shipping on orders over $50.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>Are your products cruelty-free?</h4>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-a">
+          <p>Yes! All CASAÏA products are 100% cruelty-free and vegan. We never test on animals and our ingredients are ethically sourced from Morocco.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <a class="ft-logo" href="index.html">CASAÏA</a>
+      <p class="ft-tag">"The world's most precious facial oil.<br>One ingredient. One ritual. One you."<br><br>San Carlos, CA · Sourced from Morocco</p>
+      <div class="ft-soc">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TK</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PI</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="product.html">Prickly Pear Seed Oil</a></li>
+        <li><a href="shop.html">Bundles &amp; Sets</a></li>
+        <li><a href="shop.html">Gift Sets</a></li>
+        <li><a href="shop.html">Subscription</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="product.html">Our Story</a></li>
+        <li><a href="product.html">The Ingredient</a></li>
+        <li><a href="product.html#how-to-use">How to Use</a></li>
+        <li><a href="product.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping Info</a></li>
+        <li><a href="returns.html">Returns Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2025 CASAÏA LLC. All rights reserved.</span>
+    <div class="ft-pay">
+      <span class="pay-b">VISA</span><span class="pay-b">MASTERCARD</span><span class="pay-b">AMEX</span><span class="pay-b">PAYPAL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  alert('Thank you for your message! We will get back to you within 24 hours.');
+  e.target.reset();
+  return false;
+}
+
+function toggleFaq(q){
+  const item = q.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// Cart count
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem('casaiacart') || '[]');
+  const count = cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById('cartCount').textContent = count;
+}
+updateCartCount();
+
+
+// reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>

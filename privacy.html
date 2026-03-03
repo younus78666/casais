@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | CASAÏA — Luxury Moroccan Skincare</title>
+<meta name="description" content="CASAÏA's privacy policy. Learn how we protect your personal information.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF6EE; --cream:#F2EAD8; --gold:#B8960C; --goldl:#D4AA4A;
+  --goldp:#EFE4BE; --dark:#0D0B08; --char:#1C1A17; --brown:#4A3728;
+  --mid:#8A7A6A; --sand:#D6C8B0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--char);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+
+/* ── BOLD NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:24px 72px;display:flex;align-items:center;justify-content:space-between;transition:all .5s;background:rgba(250,246,238,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,170,74,.13)}
+.n-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:12px;color:var(--char);text-decoration:none;transition:color .4s}
+.n-links{display:flex;gap:48px;list-style:none}
+.n-links a{font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--char);text-decoration:none;transition:all .3s;padding:8px 0;position:relative}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.n-links a:hover::after,.n-links a.active::after{width:100%}
+.n-links a:hover{color:var(--gold)}
+.n-cta{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--char);background:var(--goldl);padding:14px 32px;text-decoration:none;transition:all .3s;border-radius:2px}
+.n-cta:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,150,12,.3)}
+.n-cart{position:relative;margin-left:20px;cursor:pointer}
+.n-cart svg{width:24px;height:24px;stroke:var(--char);fill:none;stroke-width:1.5;transition:all .3s}
+.cart-count{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%}
+
+/* ── PAGE HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--char) 0%,#0D0B08 100%);padding:160px 0 80px;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AA4A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:#fff;position:relative;z-index:1}
+.page-title em{font-style:italic;color:var(--goldl)}
+.page-subtitle{font-size:14px;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:3px;text-transform:uppercase;margin-top:16px;position:relative;z-index:1}
+.breadcrumbs{display:flex;justify-content:center;gap:12px;margin-top:24px;position:relative;z-index:1}
+.breadcrumbs a{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}
+.breadcrumbs a:hover{color:var(--goldl)}
+.breadcrumbs span{color:rgba(255,255,255,.4)}
+
+/* ── CONTENT ── */
+.content-sec{padding:80px 0}
+.content-wrap{max-width:900px;margin:0 auto;padding:0 72px}
+.content-block{margin-bottom:64px}
+.content-block h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:24px}
+.content-block h2 em{font-style:italic;color:var(--gold)}
+.content-block p{font-size:15px;line-height:2;color:var(--mid);margin-bottom:20px}
+.content-block h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:32px 0 16px}
+.content-block ul{margin:20px 0;padding-left:24px}
+.content-block li{font-size:15px;line-height:2;color:var(--mid);margin-bottom:8px}
+.last-updated{font-size:13px;color:var(--mid);font-style:italic;margin-bottom:40px}
+
+/* ── FOOTER ── */
+footer{background:var(--char);padding:72px 0 26px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:52px;border-bottom:1px solid rgba(212,170,74,.1);margin-bottom:30px;max-width:1280px;margin:0 auto 30px;padding-left:72px;padding-right:72px}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;letter-spacing:10px;color:var(--ivory);display:block;margin-bottom:16px;text-decoration:none}
+.ft-tag{font-family:'Cormorant Garamond',serif;font-size:13.5px;font-style:italic;color:rgba(250,246,238,.58);line-height:1.85;margin-bottom:24px}
+.ft-soc{display:flex;gap:12px}
+.ft-soc a{width:36px;height:36px;border:1px solid rgba(212,170,74,.16);display:flex;align-items:center;justify-content:center;color:rgba(250,246,238,.3);text-decoration:none;font-size:11px;font-weight:500;transition:all .3s}
+.ft-soc a:hover{border-color:var(--goldl);color:var(--goldl)}
+.ft-col h4{font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--goldl);margin-bottom:20px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:12px}
+.ft-col a{font-size:13px;font-weight:400;color:rgba(250,246,238,.62);text-decoration:none;transition:color .3s}
+.ft-col a:hover{color:var(--goldl)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:30px 72px 0}
+.ft-copy{font-size:10px;font-weight:400;color:rgba(250,246,238,.48);letter-spacing:1.5px}
+.ft-pay{display:flex;gap:7px}
+.pay-b{font-size:8px;font-weight:600;letter-spacing:2px;color:rgba(250,246,238,.48);border:1px solid rgba(250,246,238,.2);padding:4px 9px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:1024px){
+  nav{padding:20px 40px}
+  .content-wrap,.ft-top,.ft-bot{padding-left:40px;padding-right:40px}
+}
+@media(max-width:768px){
+  body{cursor:auto}
+  nav{padding:16px 24px}
+  .n-links{display:none}
+  .content-wrap,.ft-top,.ft-bot{padding-left:24px;padding-right:24px}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bot{flex-direction:column;gap:16px}
+}
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="n-logo">CASAÏA</a>
+  <ul class="n-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="product.html">Our Story</a></li>
+    <li><a href="product.html#reviews">Reviews</a></li>
+    <li><a href="product.html#faq">FAQ</a></li>
+  </ul>
+  <div style="display:flex;align-items:center">
+    <a href="shop.html" class="n-cta">Shop Now</a>
+    <div class="n-cart" onclick="window.location.href='checkout.html'">
+      <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1 class="page-title rv">Privacy <em>Policy</em></h1>
+  <p class="page-subtitle rv">Your Data is Safe With Us</p>
+  <div class="breadcrumbs rv">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Privacy Policy</span>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content-sec">
+  <div class="content-wrap">
+    <p class="last-updated rv">Last Updated: January 1, 2025</p>
+
+    <div class="content-block rv">
+      <h2>Introduction</h2>
+      <p>CASAÏA LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase from us.</p>
+      <p>By accessing or using our website, you agree to the terms of this Privacy Policy. If you do not agree with the terms, please do not access the site.</p>
+    </div>
+
+    <div class="content-block rv">
+      <h2>Information We <em>Collect</em></h2>
+      <h3>Personal Information</h3>
+      <p>We may collect personal information that you voluntarily provide to us when you:</p>
+      <ul>
+        <li>Place an order</li>
+        <li>Sign up for our newsletter</li>
+        <li>Contact our customer service</li>
+        <li>Participate in promotions or surveys</li>
+        <li>Create an account</li>
+      </ul>
+      <p>This information may include your name, email address, postal address, phone number, payment information, and purchase history.</p>
+      
+      <h3>Automatically Collected Information</h3>
+      <p>When you visit our website, we automatically collect certain information about your device and usage, including:</p>
+      <ul>
+        <li>IP address</li>
+        <li>Browser type</li>
+        <li>Operating system</li>
+        <li>Pages visited</li>
+        <li>Time spent on pages</li>
+        <li>Referring website</li>
+      </ul>
+    </div>
+
+    <div class="content-block rv">
+      <h2>How We Use Your <em>Information</em></h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Process and fulfill your orders</li>
+        <li>Communicate with you about your order</li>
+        <li>Send marketing communications (with your consent)</li>
+        <li>Improve our website and products</li>
+        <li>Prevent fraud and protect our rights</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+    </div>
+
+    <div class="content-block rv">
+      <h2>Information <em>Sharing</em></h2>
+      <p>We do not sell your personal information. We may share your information with:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> Payment processors, shipping companies, and email service providers</li>
+        <li><strong>Legal Compliance:</strong> When required by law or to protect our rights</li>
+        <li><strong>Business Transfers:</strong> In connection with a merger, sale, or acquisition</li>
+      </ul>
+    </div>
+
+    <div class="content-block rv">
+      <h2>Your <em>Rights</em></h2>
+      <p>Depending on your location, you may have the right to:</p>
+      <ul>
+        <li>Access your personal information</li>
+        <li>Correct inaccurate information</li>
+        <li>Request deletion of your information</li>
+        <li>Opt-out of marketing communications</li>
+        <li>Withdraw consent</li>
+      </ul>
+      <p>To exercise these rights, please contact us at <a href="mailto:privacy@casaiaskin.com" style="color:var(--gold)">privacy@casaiaskin.com</a>.</p>
+    </div>
+
+    <div class="content-block rv">
+      <h2>Data <em>Security</em></h2>
+      <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="content-block rv">
+      <h2>Contact <em>Us</em></h2>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:privacy@casaiaskin.com" style="color:var(--gold)">privacy@casaiaskin.com</a><br>
+      <strong>Address:</strong> CASAÏA LLC, 1234 Market Street, San Carlos, CA 94070</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <a class="ft-logo" href="index.html">CASAÏA</a>
+      <p class="ft-tag">"The world's most precious facial oil.<br>One ingredient. One ritual. One you."<br><br>San Carlos, CA · Sourced from Morocco</p>
+      <div class="ft-soc">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TK</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PI</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="product.html">Prickly Pear Seed Oil</a></li>
+        <li><a href="shop.html">Bundles &amp; Sets</a></li>
+        <li><a href="shop.html">Gift Sets</a></li>
+        <li><a href="shop.html">Subscription</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="product.html">Our Story</a></li>
+        <li><a href="product.html">The Ingredient</a></li>
+        <li><a href="product.html#how-to-use">How to Use</a></li>
+        <li><a href="product.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping Info</a></li>
+        <li><a href="returns.html">Returns Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2025 CASAÏA LLC. All rights reserved.</span>
+    <div class="ft-pay">
+      <span class="pay-b">VISA</span><span class="pay-b">MASTERCARD</span><span class="pay-b">AMEX</span><span class="pay-b">PAYPAL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cart count
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem('casaiacart') || '[]');
+  const count = cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById('cartCount').textContent = count;
+}
+updateCartCount();
+
+
+// reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>
